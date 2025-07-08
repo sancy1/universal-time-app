@@ -10,7 +10,7 @@ services:
     
     # Path to the directory containing your package.json and Dockerfile, relative to the Git repository root.
     # IMPORTANT: Your Dockerfile, package.json, src folder, etc., must be inside this directory.
-    rootDir: universal-time-app-backend
+    rootDir: .
     
     # Path to your Dockerfile, relative to the rootDir.
     # This is optional if your Dockerfile is directly in rootDir, but adds explicit clarity.
