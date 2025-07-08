@@ -8,6 +8,5 @@ dist
 server.close())
 tables.txt
 setup.txt
-Dockerfile
 .git
 .gitignore
