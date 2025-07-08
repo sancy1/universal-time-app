@@ -3,7 +3,7 @@
 
 services:
   - type: web
-    name: universal-time-backend # Your desired service name on Render
+    name: universaltime # Your desired service name on Render
     runtime: docker              # Specifies that this service will be deployed via Docker
     region: oregon               # Recommended region for deployment (e.g., oregon, frankfurt, singapore)
     plan: free                   # Service plan type (e.g., 'free', 'starter', 'standard')
