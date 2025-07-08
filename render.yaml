@@ -1,0 +1,27 @@
+# render.yaml
+# This file defines your Render infrastructure as code for a Dockerized web service.
+
+services:
+  - type: web
+    name: universal-time-backend # Your desired service name on Render
+    runtime: docker              # Specifies that this service will be deployed via Docker
+    region: oregon               # Recommended region for deployment (e.g., oregon, frankfurt, singapore)
+    plan: free                   # Service plan type (e.g., 'free', 'starter', 'standard')
+    
+    # Path to the directory containing your package.json and Dockerfile, relative to the Git repository root.
+    # IMPORTANT: Your Dockerfile, package.json, src folder, etc., must be inside this directory.
+    rootDir: universal-time-app-backend
+    
+    # Path to your Dockerfile, relative to the rootDir.
+    # This is optional if your Dockerfile is directly in rootDir, but adds explicit clarity.
+    dockerfilePath: ./Dockerfile 
+    
+    # Environment variables for your running container.
+    # These override any values set within the Dockerfile itself or provide sensitive data.
+    envVars:
+      - key: DATABASE_URL
+        value: postgresql://neondb_owner:npg_yBvORAs4LFp2@ep-tight-wind-a87bo2j0-pooler.eastus2.azure.neon.tech/neondb?sslmode=require
+      - key: PORT
+        value: "3000" # This MUST match the EXPOSE port in your Dockerfile and the port your app listens on.
+      - key: NODE_ENV
+        value: production # Set to 'production' for a deployed environment.

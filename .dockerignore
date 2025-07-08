@@ -1,0 +1,13 @@
+# universal-time-app-backend/.dockerignore
+
+node_modules
+dist
+.env
+*.log
+.DS_Store
+server.close())
+tables.txt
+setup.txt
+Dockerfile
+.git
+.gitignore
